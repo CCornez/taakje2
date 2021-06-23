@@ -31,16 +31,12 @@ const getValue = () => {
       const party = setInterval(colorChange, 100);
       setTimeout(() => {
         clearInterval(party);
-        clearAll();
+        rootRef.remove();
+        console.log(colors);
       }, 5000);
     }
   }, 1);
 };
-
-function clearAll() {
-  rootRef.remove();
-  console.log(colors);
-}
 
 buttonRef.addEventListener("mouseover", colorChange);
 buttonRef.addEventListener("mouseout", colorChange);
