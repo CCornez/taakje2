@@ -1,0 +1,49 @@
+@use "./base/mixins" as *;
+@use "./base/variables" as *;
+@use "./base/reset";
+@use "./base/fonts";
+@use "../icons/style.css";
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#button {
+  display: block;
+  border: 1px solid black;
+  padding: 7px 14px;
+  box-shadow: 1px 1px;
+  background-color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#input {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: calc(50% + 20px);
+  width: 200px;
+  padding: 4px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  transition: all 300ms;
+  &.active {
+    top: calc(50% + 30px);
+    opacity: 1;
+  }
+  &::placeholder {
+    color: rgba(102, 102, 102, 0.7);
+  }
+}
